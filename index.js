@@ -10,12 +10,12 @@ import { chromium } from "@playwright/test";
   const context = await browser.newContext();
 
   const mapsPage = await context.newPage();
-  mapsPage.goto('https://maps.google.com');
+  await mapsPage.goto('https://maps.google.com');
 
   await new Promise(resolve => setTimeout(resolve, 1000 * 60));
   
   const blobsPage = await context.newPage();
-  blobsPage.goto('chrome://blob-internals');
+  await blobsPage.goto('chrome://blob-internals');
 
   await new Promise(resolve => setTimeout(resolve, 1000 * 30));
   
